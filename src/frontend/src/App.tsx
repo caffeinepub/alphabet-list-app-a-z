@@ -1,11 +1,23 @@
 import { useState } from 'react';
 import AlphabetGrid from './components/AlphabetGrid';
-import AWordsPage from './pages/AWordsPage';
+import LetterWordsPage from './pages/LetterWordsPage';
 import { SiCoffeescript } from 'react-icons/si';
 import { Heart } from 'lucide-react';
 
+type View = 'alphabet' | 'letter-words';
+
 function App() {
-  const [currentView, setCurrentView] = useState<'alphabet' | 'a-words'>('alphabet');
+  const [currentView, setCurrentView] = useState<View>('alphabet');
+  const [selectedLetter, setSelectedLetter] = useState<string>('A');
+
+  const handleLetterClick = (letter: string) => {
+    setSelectedLetter(letter);
+    setCurrentView('letter-words');
+  };
+
+  const handleBackToAlphabet = () => {
+    setCurrentView('alphabet');
+  };
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
@@ -18,7 +30,7 @@ function App() {
           <p className="text-muted-foreground mt-2 text-sm md:text-base">
             {currentView === 'alphabet' 
               ? 'A complete list of all 26 letters from A to Z'
-              : 'Explore words starting with A'}
+              : `Explore words starting with ${selectedLetter}`}
           </p>
         </div>
       </header>
@@ -26,13 +38,12 @@ function App() {
       {/* Main Content */}
       <main className="flex-1 container mx-auto px-4 py-8 md:py-12">
         {currentView === 'alphabet' ? (
-          <AlphabetGrid onLetterClick={(letter) => {
-            if (letter === 'A') {
-              setCurrentView('a-words');
-            }
-          }} />
+          <AlphabetGrid onLetterClick={handleLetterClick} />
         ) : (
-          <AWordsPage onBack={() => setCurrentView('alphabet')} />
+          <LetterWordsPage 
+            letter={selectedLetter} 
+            onBack={handleBackToAlphabet} 
+          />
         )}
       </main>
 

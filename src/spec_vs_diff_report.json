@@ -1,26 +1,35 @@
 {
   "kind": "spec_vs_diff_report",
   "version": "1.0",
-  "generatedAt": "2026-02-07T02:58:31.350Z",
-  "summary": "REQ-4 and REQ-5 appear implemented: a dedicated A-words page was added, navigation from the A–Z page to the A-words page is provided (via clicking the “A” tile), the A-words page has a title, a responsive grid list, and a back button. The A-words list is static and contains >25 entries. Some additional project metadata/documentation files were modified/added that were not requested.",
-  "missing_requirements": [],
-  "hallucinated_features": [
+  "generatedAt": "2026-02-07T03:18:50.895Z",
+  "summary": "REQ-6 and REQ-7 appear implemented via a clickable A–Z grid and state-based navigation to a generic LetterWordsPage with a dynamic header subtitle and a “Back to Alphabet” button. REQ-8 is partially evidenced by adding a unified letterWords dataset importing existing A words, but the diff is truncated so completeness for all letters A–Z cannot be confirmed.",
+  "missing_requirements": [
     {
-      "description": "Updated/maintained repository metadata/docs files (project state and frontend file summary) unrelated to adding the A-words page.",
-      "reason": "BuildRequest only asks to add a second page and static A-word list; it does not request updating project tracking/summary files.",
+      "id": "REQ-8",
+      "requirement": "Add static, curated word lists for each letter B–Z and ensure the words page renders the correct list based on the selected letter (A–Z).",
+      "reason": "The new unified dataset file is truncated, so it’s not verifiable from the provided diff summary that curated lists exist for every letter through Z (and thus that selecting any letter, e.g. X/Z, will display its corresponding list).",
       "evidence": [
-        "project_state.json",
-        "frontend-file-summaries.txt"
+        "frontend/src/data/letterWords.ts (truncated)"
       ]
     }
   ],
-  "confidence": 0.78,
+  "hallucinated_features": [
+    {
+      "description": "Added/changed a footer with a 2026 copyright notice and an external link to caffeine.ai, including icons.",
+      "reason": "The BuildRequest focuses on making all letters navigable and adding static word lists; it does not request new branding/footer content or external promotional links.",
+      "evidence": [
+        "frontend/src/App.tsx"
+      ]
+    }
+  ],
+  "confidence": 0.62,
   "changed_files": [
     "frontend-file-summaries.txt",
     "frontend/src/App.tsx",
     "frontend/src/components/AlphabetGrid.tsx",
-    "frontend/src/data/aWords.ts",
+    "frontend/src/data/letterWords.ts",
     "frontend/src/pages/AWordsPage.tsx",
+    "frontend/src/pages/LetterWordsPage.tsx",
     "project_state.json"
   ]
 }

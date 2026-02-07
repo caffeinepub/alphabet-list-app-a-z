@@ -16,11 +16,9 @@ function AlphabetGrid({ onLetterClick }: AlphabetGridProps) {
         {alphabet.map((letter) => (
           <Card
             key={letter}
-            className={`group hover:shadow-lg hover:scale-105 transition-all duration-300 hover:border-primary/50 bg-card ${
-              letter === 'A' ? 'cursor-pointer' : ''
-            }`}
+            className="group hover:shadow-lg hover:scale-105 transition-all duration-300 hover:border-primary/50 bg-card cursor-pointer"
             onClick={() => {
-              if (letter === 'A' && onLetterClick) {
+              if (onLetterClick) {
                 onLetterClick(letter);
               }
             }}
@@ -40,7 +38,7 @@ function AlphabetGrid({ onLetterClick }: AlphabetGridProps) {
           <span className="font-semibold text-foreground">26 letters</span> in the English alphabet
           {onLetterClick && (
             <span className="block mt-2 text-sm">
-              Click on <span className="font-semibold text-foreground">A</span> to see words starting with that letter
+              Click on any letter to see words starting with that letter
             </span>
           )}
         </p>

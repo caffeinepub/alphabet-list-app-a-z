@@ -1,8 +1,10 @@
 {
-  "frontend/src/App.tsx": "Main application component with view state management to switch between the alphabet grid and A-words page, includes header and footer with branding.",
-  "frontend/src/components/AlphabetGrid.tsx": "Responsive grid component that generates A-Z letters with the \"A\" tile now clickable to navigate to the A-words page via callback prop.",
+  "frontend/src/App.tsx": "Main application component with view state management supporting navigation between the alphabet grid and any letter's words page, with dynamic header subtitle based on selected letter.",
+  "frontend/src/components/AlphabetGrid.tsx": "Responsive A-Z grid component where all 26 letter tiles are now clickable and consistently styled with hover effects to navigate to their respective word pages.",
   "frontend/src/index.css": "Global styles with warm amber/orange OKLCH color palette for light and dark modes, custom typography using Playfair Display and Inter fonts.",
   "frontend/tailwind.config.js": "Tailwind configuration extended with custom font families (Inter and Playfair Display) and design tokens matching the warm amber theme.",
   "frontend/src/data/aWords.ts": "Static curated array of 54 English words starting with \"A\" for display on the A-words page.",
-  "frontend/src/pages/AWordsPage.tsx": "Dedicated page component that displays a responsive grid of A-words with a back button, page title, and summary info."
+  "frontend/src/pages/AWordsPage.tsx": "Dedicated page component that displays a responsive grid of A-words with a back button, page title, and summary info.",
+  "frontend/src/data/letterWords.ts": "Unified static dataset containing curated word lists for all letters A-Z with helper functions to retrieve words for any given letter.",
+  "frontend/src/pages/LetterWordsPage.tsx": "Generic letter words page component that accepts any letter A-Z as a prop and displays the corresponding word list with count and back navigation."
 }

@@ -2,12 +2,10 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-add-a-new-page-to-the-frontend-that-lists-words-related-to-the-english-alphabet-letter-a-and-make-it-reachable-from-the-existing-a-z-alphabet-page",
-      "featureTitle": "Add a new page to the frontend that lists words related to the English alphabet letter “A”, and make it reachable from the existing A–Z alphabet page.",
+      "featureId": "feature-update-the-alphabet-grid-so-that-every-letter-tile-a-z-is-clickable-and-triggers-navigation-to-a-corresponding-words-page-for-that-letter",
+      "featureTitle": "Update the alphabet grid so that every letter tile (A–Z) is clickable and triggers navigation to a corresponding words page for that letter.",
       "files": [
-        "frontend/src/App.tsx",
-        "frontend/src/components/AlphabetGrid.tsx",
-        "frontend/src/pages/AWordsPage.tsx"
+        "frontend/src/components/AlphabetGrid.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -17,16 +15,17 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-4"
+        "REQ-6"
       ],
       "confidence": "high"
     },
     {
-      "featureId": "feature-populate-the-a-words-page-with-a-static-curated-list-of-english-words-that-start-with-the-letter-a-no-external-api-calls",
-      "featureTitle": "Populate the “A words” page with a static, curated list of English words that start with the letter “A” (no external API calls).",
+      "featureId": "feature-refactor-the-frontend-view-routing-logic-so-the-app-can-display-a-words-page-for-any-selected-letter-a-z-including-updating-the-header-subtitle-to-reflect-the-currently-selected-letter",
+      "featureTitle": "Refactor the frontend view/routing logic so the app can display a words page for any selected letter (A–Z), including updating the header subtitle to reflect the currently selected letter.",
       "files": [
-        "frontend/src/data/aWords.ts",
-        "frontend/src/pages/AWordsPage.tsx"
+        "frontend/src/App.tsx",
+        "frontend/src/pages/AWordsPage.tsx",
+        "frontend/src/pages/LetterWordsPage.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -36,7 +35,26 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-5"
+        "REQ-7"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-static-curated-word-lists-for-each-letter-b-z-matching-the-existing-approach-used-for-a-and-ensure-the-words-page-renders-the-correct-list-based-on-the-selected-letter",
+      "featureTitle": "Add static, curated word lists for each letter B–Z (matching the existing approach used for A) and ensure the words page renders the correct list based on the selected letter.",
+      "files": [
+        "frontend/src/data/letterWords.ts",
+        "frontend/src/pages/LetterWordsPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
       ],
       "confidence": "high"
     }

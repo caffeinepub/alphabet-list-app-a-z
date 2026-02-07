@@ -1,55 +1,66 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-07T02:58:31.352Z",
+  "generatedAt": "2026-02-07T03:18:50.897Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
   },
   "requirements": {
-    "total": 2,
-    "implemented": 2,
+    "total": 3,
+    "implemented": 3,
     "items": [
       {
-        "id": "REQ-4",
-        "summary": "Add a new page to the frontend that lists words related to the English alphabet letter “A”, and make it reachable from the existing A–Z alphabet page.",
+        "id": "REQ-6",
+        "summary": "Update the alphabet grid so that every letter tile (A–Z) is clickable and triggers navigation to a corresponding words page for that letter.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/pages/AWordsPage.tsx",
-          "frontend/src/App.tsx",
           "frontend/src/components/AlphabetGrid.tsx"
         ],
         "matchedFiles": [
-          "frontend/src/pages/AWordsPage.tsx",
-          "frontend/src/App.tsx",
           "frontend/src/components/AlphabetGrid.tsx"
         ]
       },
       {
-        "id": "REQ-5",
-        "summary": "Populate the “A words” page with a static, curated list of English words that start with the letter “A” (no external API calls).",
+        "id": "REQ-7",
+        "summary": "Refactor the frontend view/routing logic so the app can display a words page for any selected letter (A–Z), including updating the header subtitle to reflect the currently selected letter.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/data/aWords.ts",
-          "frontend/src/pages/AWordsPage.tsx"
+          "frontend/src/pages/AWordsPage.tsx",
+          "frontend/src/pages/LetterWordsPage.tsx",
+          "frontend/src/App.tsx"
         ],
         "matchedFiles": [
-          "frontend/src/data/aWords.ts",
-          "frontend/src/pages/AWordsPage.tsx"
+          "frontend/src/pages/AWordsPage.tsx",
+          "frontend/src/pages/LetterWordsPage.tsx",
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-8",
+        "summary": "Add static, curated word lists for each letter B–Z (matching the existing approach used for A) and ensure the words page renders the correct list based on the selected letter.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/data/letterWords.ts",
+          "frontend/src/pages/LetterWordsPage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/data/letterWords.ts",
+          "frontend/src/pages/LetterWordsPage.tsx"
         ]
       }
     ]
   },
   "changedFiles": [
     "build-request.json",
-    "build-template/README.md",
     "feature_evidence.json",
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
     "frontend/src/App.tsx",
     "frontend/src/components/AlphabetGrid.tsx",
-    "frontend/src/data/aWords.ts",
+    "frontend/src/data/letterWords.ts",
     "frontend/src/pages/AWordsPage.tsx",
+    "frontend/src/pages/LetterWordsPage.tsx",
     "project_state.json",
     "scratch/component-selection.json",
     "spec.md",

@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 5,
-  "summary": "App that lists all English alphabet letters (A–Z) and includes an additional page to list words related to the letter A.",
+  "projectStateVersion": 7,
+  "summary": "App that lists all English alphabet letters (A–Z) and includes pages that list words related to each letter.",
   "architectural_notes": [],
   "known_issues": [],
   "isFixRequest": false,
@@ -45,6 +45,30 @@
         "REQ-5"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-update-the-alphabet-grid-so-that-every-letter-tile-a-z-is-clickable-and-triggers-navigation-to-a-corresponding-words-page-for-that-letter",
+      "title": "Update the alphabet grid so that every letter tile (A–Z) is clickable and triggers navigation to a corresponding words page for that letter.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-refactor-the-frontend-view-routing-logic-so-the-app-can-display-a-words-page-for-any-selected-letter-a-z-including-updating-the-header-subtitle-to-reflect-the-currently-selected-letter",
+      "title": "Refactor the frontend view/routing logic so the app can display a words page for any selected letter (A–Z), including updating the header subtitle to reflect the currently selected letter.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-static-curated-word-lists-for-each-letter-b-z-matching-the-existing-approach-used-for-a-and-ensure-the-words-page-renders-the-correct-list-based-on-the-selected-letter",
+      "title": "Add static, curated word lists for each letter B–Z (matching the existing approach used for A) and ensure the words page renders the correct list based on the selected letter.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -57,6 +81,12 @@
     {
       "id": "AR-2",
       "summary": "Add an additional page that lists all words related to the letter 'A' (A alphabet).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Add pages of related words for each alphabet letter (A–Z), accessible from the main alphabet list.",
       "reqIds": [],
       "status": "pending"
     }

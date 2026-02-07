@@ -1,53 +1,68 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Second page for curated A-words list with navigation from alphabet grid",
+  "title": "A–Z navigable letter word pages with unified static datasets",
   "requirements": [
     {
-      "id": "REQ-4",
-      "summary": "Add a dedicated “A words” view and wire navigation from the existing A–Z alphabet page with a clear way to return.",
+      "id": "REQ-6",
+      "summary": "Make every A–Z tile in the alphabet grid clickable and navigate to that letter’s words view while preserving the responsive grid layout.",
       "acceptanceCriteria": [
-        "The app has a second page (separate view) dedicated to “A” words.",
-        "From the main alphabet page, there is a clear navigation control (e.g., button/link) to open the “A words” page.",
-        "The “A words” page includes a visible page title (e.g., “Words that start with A”) and renders a list of A-related words in a clean, responsive layout.",
-        "The “A words” page includes an obvious way to return to the main A–Z page (e.g., Back link/button)."
+        "On the main A–Z grid, clicking any letter A–Z navigates to a words page for that letter.",
+        "Tiles visually indicate clickability consistently for all letters (not only A).",
+        "The existing responsive grid layout remains intact on mobile and desktop."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/pages/AWordsPage.tsx",
-          "operation": "create",
-          "description": "Create the A-words page component that renders a responsive list layout and includes a prominent page title and a Back control to return to the A–Z view. Use shadcn-ui (e.g., Card) where appropriate for consistent styling; verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Add lightweight view switching (e.g., local state) to conditionally render either the existing A–Z page content or the new AWordsPage, and pass navigation callbacks between them (open A words, go back)."
-        },
-        {
           "path": "frontend/src/components/AlphabetGrid.tsx",
           "operation": "modify",
-          "description": "Wire a clear navigation control from the alphabet grid to the A-words page (e.g., make the “A” tile interactive and/or add an explicit link/button near the grid). Keep other letters non-navigating per non-goals. Use shadcn-ui Card already present for the tile styling; verify the component's usage instructions before implementing."
+          "description": "Update the grid so all letters A–Z are interactive (consistent pointer/hover affordances) and always call onLetterClick(letter) when provided. Continue rendering using shadcn-ui Card/CardContent for consistent styling; verify the component's usage instructions before implementing."
         }
       ]
     },
     {
-      "id": "REQ-5",
-      "summary": "Populate the A-words page with a static curated list of at least 25 English words starting with “A”, with no network requests.",
+      "id": "REQ-7",
+      "summary": "Refactor view state to support a words page for any selected letter and update header subtitle + add Back to Alphabet control.",
       "acceptanceCriteria": [
-        "The words displayed on the “A words” page are all English words that begin with “A”.",
-        "The list contains enough entries to demonstrate scrolling on smaller screens (at least 25 words).",
-        "No network requests are required to display the list."
+        "The app supports switching between the alphabet grid view and a letter words view for any selected letter A–Z.",
+        "The header description changes to match the current view and selected letter (e.g., \"Explore words starting with B\").",
+        "A clear \"Back to Alphabet\" control returns the user to the main A–Z grid."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/data/aWords.ts",
-          "operation": "create",
-          "description": "Add a static exported curated array of at least 25 English words that start with “A” (no fetching, no backend calls)."
+          "path": "frontend/src/pages/AWordsPage.tsx",
+          "operation": "rename",
+          "description": "Rename the existing A-only words page to a generic LetterWordsPage so it can render words for any selected letter without creating a new top-level route/page. Verify the component's usage instructions before implementing."
         },
         {
-          "path": "frontend/src/pages/AWordsPage.tsx",
+          "path": "frontend/src/pages/LetterWordsPage.tsx",
           "operation": "modify",
-          "description": "Import and render the static A-words list from frontend/src/data/aWords.ts, ensuring the list is scroll-friendly on smaller screens and uses a clean responsive layout. Use shadcn-ui components only via existing library imports where helpful; verify the component's usage instructions before implementing."
+          "description": "Refactor the page to accept a selected letter prop (A–Z), render the correct title/subtitle, show the count for that letter, and keep a clear Back to Alphabet control using shadcn-ui Button/Card components; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Refactor app view logic from an A-only toggle to a selectedLetter-driven view (alphabet vs letter words). Wire AlphabetGrid to set the selected letter for any A–Z click, render LetterWordsPage for the selected letter, and update the header subtitle dynamically (alphabet description vs \"Explore words starting with <LETTER>\")."
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Create static curated word lists for B–Z and unify all A–Z word data so the words view renders the correct list with accurate counts (no external calls).",
+      "acceptanceCriteria": [
+        "There is a static, curated list of English words for every letter A–Z, with no external API calls.",
+        "Selecting letter X displays only the X list and the count shown on the page matches the list length.",
+        "Existing A words content continues to work and is included in the unified A–Z letter-to-words dataset."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/data/letterWords.ts",
+          "operation": "create",
+          "description": "Create a unified static A–Z letter-to-words dataset (including A via import from the existing aWords list) and export a small helper to retrieve the list for a given letter; ensure B–Z curated lists are included and no external API calls are introduced."
+        },
+        {
+          "path": "frontend/src/pages/LetterWordsPage.tsx",
+          "operation": "modify",
+          "description": "Update the page to read words from the unified A–Z dataset (instead of the A-only list), ensuring only the selected letter’s list is rendered and the displayed count matches the list length. Continue using shadcn-ui components for the word cards and layout; verify the component's usage instructions before implementing."
         }
       ]
     }
