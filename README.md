@@ -1,2 +1,3 @@
-# alphabet-list-app-a-z
-Exported from Caffeine project: Alphabet List App (A–Z)
+## 
+
+To run app build and run docker image: `docker build -t app . docker run -it --network host app`

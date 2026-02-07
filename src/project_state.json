@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 5,
+  "summary": "App that lists all English alphabet letters (A–Z) and includes an additional page to list words related to the letter A.",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-build-a-single-page-ui-that-lists-all-26-english-alphabet-letters-a-z-in-order",
+      "title": "Build a single-page UI that lists all 26 English alphabet letters (A–Z) in order.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-present-the-alphabet-list-in-a-clean-responsive-layout-suitable-for-both-mobile-and-desktop-e-g-a-grid-of-letter-cards-tiles-that-reflows-based-on-screen-size",
+      "title": "Present the alphabet list in a clean, responsive layout suitable for both mobile and desktop (e.g., a grid of letter cards/tiles that reflows based on screen size).",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-cohesive-visual-theme-across-the-app-colors-typography-spacing-and-component-styling-with-a-distinct-style-avoid-blue-and-purple-as-the-primary-palette",
+      "title": "Apply a cohesive visual theme across the app (colors, typography, spacing, and component styling) with a distinct style; avoid blue-and-purple as the primary palette.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-new-page-to-the-frontend-that-lists-words-related-to-the-english-alphabet-letter-a-and-make-it-reachable-from-the-existing-a-z-alphabet-page",
+      "title": "Add a new page to the frontend that lists words related to the English alphabet letter “A”, and make it reachable from the existing A–Z alphabet page.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-populate-the-a-words-page-with-a-static-curated-list-of-english-words-that-start-with-the-letter-a-no-external-api-calls",
+      "title": "Populate the “A words” page with a static, curated list of English words that start with the letter “A” (no external API calls).",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Build an app that displays/list all English alphabet letters (A–Z).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Add an additional page that lists all words related to the letter 'A' (A alphabet).",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Alphabet List App (A–Z)",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

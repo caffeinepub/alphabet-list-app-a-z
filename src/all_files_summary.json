@@ -1,0 +1,17 @@
+{
+  "backend/main.mo": "Minimal Motoko canister actor with no methods defined.",
+  "feature_evidence.json": "Feature evidence report linking feature IDs to relevant frontend files and components.",
+  "frontend-file-summaries.txt": "Prewritten summaries of core frontend files including App, AlphabetGrid, styles, and A-words data.",
+  "frontend/index.css": "Tailwind base styles with extensive CSS variables for color themes and dark mode.",
+  "frontend/index.html": "HTML entry point defining root container and loading the main React script.",
+  "frontend/src/App.tsx": "Main React component that switches between the alphabet grid and A-words page with header and footer UI.",
+  "frontend/src/components/AlphabetGrid.tsx": "Generates an interactive grid of A–Z cards, making A clickable to trigger navigation.",
+  "frontend/src/data/aWords.ts": "Exports a static list of English words beginning with A for display in the A-words page.",
+  "frontend/src/hooks/useActor.ts": "React hook that creates and manages a backend actor instance tied to Internet Identity state.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Comprehensive Internet Identity provider and hook managing login, stored identities, and authentication state.",
+  "frontend/src/index.css": "Global Tailwind styles with custom warm amber theme and font settings for light and dark modes.",
+  "frontend/src/main.tsx": "React entry point wrapping the app with query and identity providers and importing global styles.",
+  "frontend/src/pages/AWordsPage.tsx": "Page that displays a grid of A-words with a back button and summary section.",
+  "frontend/tailwind.config.js": "Configures Tailwind with custom colors, typography, animations, and plugins for a themed, responsive UI.",
+  "project_state.json": "Defines the app’s project state, listing existing features for alphabet pages and pending requests for alphabet and A-word listings."
+}

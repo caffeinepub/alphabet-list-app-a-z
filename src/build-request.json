@@ -1,0 +1,68 @@
+{
+  "kind": "build_request",
+  "title": "Add a second page that lists words related to the letter A",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-4",
+      "text": "Add a new page to the frontend that lists words related to the English alphabet letter “A”, and make it reachable from the existing A–Z alphabet page.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-6"
+        ],
+        "quotes": [
+          "Now add one more page and list all the words related to a alphabet"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The app has a second page (separate view) dedicated to “A” words.",
+        "From the main alphabet page, there is a clear navigation control (e.g., button/link) to open the “A words” page.",
+        "The “A words” page includes a visible page title (e.g., “Words that start with A”) and renders a list of A-related words in a clean, responsive layout.",
+        "The “A words” page includes an obvious way to return to the main A–Z page (e.g., Back link/button)."
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Populate the “A words” page with a static, curated list of English words that start with the letter “A” (no external API calls).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-6"
+        ],
+        "quotes": [
+          "list all the words related to a alphabet"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The words displayed on the “A words” page are all English words that begin with “A”.",
+        "The list contains enough entries to demonstrate scrolling on smaller screens (at least 25 words).",
+        "No network requests are required to display the list."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not modify any files under frontend/src/components/ui (Shadcn UI components are read-only).",
+    "Do not modify files listed in frontend.immutablePaths (e.g., frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useActor.ts, frontend/src/main.tsx).",
+    "Keep the backend as a single Motoko actor; do not introduce additional backend services or external databases."
+  ],
+  "nonGoals": [
+    "Do not implement dictionary/thesaurus lookups or integrations with third-party APIs to fetch words.",
+    "Do not add authentication requirements or user accounts for viewing the words page.",
+    "Do not add per-letter pages for all letters (only implement the requested “A” words page)."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}

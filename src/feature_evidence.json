@@ -1,0 +1,44 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-add-a-new-page-to-the-frontend-that-lists-words-related-to-the-english-alphabet-letter-a-and-make-it-reachable-from-the-existing-a-z-alphabet-page",
+      "featureTitle": "Add a new page to the frontend that lists words related to the English alphabet letter “A”, and make it reachable from the existing A–Z alphabet page.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/AlphabetGrid.tsx",
+        "frontend/src/pages/AWordsPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-populate-the-a-words-page-with-a-static-curated-list-of-english-words-that-start-with-the-letter-a-no-external-api-calls",
+      "featureTitle": "Populate the “A words” page with a static, curated list of English words that start with the letter “A” (no external API calls).",
+      "files": [
+        "frontend/src/data/aWords.ts",
+        "frontend/src/pages/AWordsPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

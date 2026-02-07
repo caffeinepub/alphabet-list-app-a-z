@@ -1,0 +1,55 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Second page for curated A-words list with navigation from alphabet grid",
+  "requirements": [
+    {
+      "id": "REQ-4",
+      "summary": "Add a dedicated “A words” view and wire navigation from the existing A–Z alphabet page with a clear way to return.",
+      "acceptanceCriteria": [
+        "The app has a second page (separate view) dedicated to “A” words.",
+        "From the main alphabet page, there is a clear navigation control (e.g., button/link) to open the “A words” page.",
+        "The “A words” page includes a visible page title (e.g., “Words that start with A”) and renders a list of A-related words in a clean, responsive layout.",
+        "The “A words” page includes an obvious way to return to the main A–Z page (e.g., Back link/button)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/AWordsPage.tsx",
+          "operation": "create",
+          "description": "Create the A-words page component that renders a responsive list layout and includes a prominent page title and a Back control to return to the A–Z view. Use shadcn-ui (e.g., Card) where appropriate for consistent styling; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add lightweight view switching (e.g., local state) to conditionally render either the existing A–Z page content or the new AWordsPage, and pass navigation callbacks between them (open A words, go back)."
+        },
+        {
+          "path": "frontend/src/components/AlphabetGrid.tsx",
+          "operation": "modify",
+          "description": "Wire a clear navigation control from the alphabet grid to the A-words page (e.g., make the “A” tile interactive and/or add an explicit link/button near the grid). Keep other letters non-navigating per non-goals. Use shadcn-ui Card already present for the tile styling; verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Populate the A-words page with a static curated list of at least 25 English words starting with “A”, with no network requests.",
+      "acceptanceCriteria": [
+        "The words displayed on the “A words” page are all English words that begin with “A”.",
+        "The list contains enough entries to demonstrate scrolling on smaller screens (at least 25 words).",
+        "No network requests are required to display the list."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/data/aWords.ts",
+          "operation": "create",
+          "description": "Add a static exported curated array of at least 25 English words that start with “A” (no fetching, no backend calls)."
+        },
+        {
+          "path": "frontend/src/pages/AWordsPage.tsx",
+          "operation": "modify",
+          "description": "Import and render the static A-words list from frontend/src/data/aWords.ts, ensuring the list is scroll-friendly on smaller screens and uses a clean responsive layout. Use shadcn-ui components only via existing library imports where helpful; verify the component's usage instructions before implementing."
+        }
+      ]
+    }
+  ]
+}
